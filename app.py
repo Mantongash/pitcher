@@ -35,13 +35,17 @@ def home():
 def about():
     return render_template("about.html", title="About")
 
+
 @app.route("/login")
 def login():
-  return render_template("login.html", title="Log In")
+    form = LoginForm()
+    return render_template("login.html", title="Log In")
+
 
 @app.route("/signup")
 def signup():
-  return render_template("signup.html", title="Sign Up")
+    form = RegistrationForm()
+    return render_template("signup.html", title="Sign Up")
 
 
 if __name__ == "__main__":
