@@ -28,3 +28,9 @@ header {
 nav {
   background: #199474;
 }
+
+nav a {
+  color: #041b15;
+  font-weight: bolder;
+}
+
