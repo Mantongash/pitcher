@@ -1,19 +1,18 @@
-{% extends "base.html"%}
-
-{% block content%}
+{% extends "base.html"%} {% block content%}
 <header>
   <h1>YOUR PITCH, WIDER REACH</h1>
   <p>Create your one minute pitch and know it's worth</p>
 </header>
 <main>
-  
-  {% for post in posts %}
-  <div class="posts card">
-    <h1 class="card-header">{{post.title}}</h1>
-    <p>{{post.date}}</p>
-    <p class="card-body">{{post.pitch}}</p>
-    <p class="card-footer">{{post.author}}</p>
+  <div class="content">
+    {% for post in posts %}
+    <div class="posts card">
+      <h1 class="card-header">{{post.title}}</h1>
+      <p>{{post.date}}</p>
+      <p class="card-body">{{post.pitch}}</p>
+      <p class="card-footer">{{post.author}}</p>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </main>
 {% endblock content%}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 body {
   font-family: "Montserrat";
@@ -6,11 +6,16 @@ body {
 
 header {
   /* background: url("static/images/pitch.jpg") no-repeat center center/cover; */
-  background: #041B15;
+  background: #041b15;
   height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #fff;
+}
+
+.posts {
+  width: 30%;
+  /* display: flex; */
 }
