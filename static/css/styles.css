@@ -19,3 +19,8 @@ header {
   width: 30%;
   /* display: flex; */
 }
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
