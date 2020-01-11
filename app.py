@@ -31,7 +31,7 @@ def home():
     return render_template("home.html", title="Home", posts=posts)
 
 
-@app.route("/about"):
+@app.route("/about")
 def about():
     return render_template("about.html", title="About")
 
