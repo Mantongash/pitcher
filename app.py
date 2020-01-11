@@ -35,6 +35,10 @@ def home():
 def about():
     return render_template("about.html", title="About")
 
+@app.route("/login")
+def login():
+  render_template("login.html", title="Log In")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
