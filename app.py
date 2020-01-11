@@ -24,7 +24,7 @@ posts = [
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", title="The Pitcher")
+    return render_template("home.html", title="The Pitcher", posts=posts)
 
 
 if __name__ == "__main__":
