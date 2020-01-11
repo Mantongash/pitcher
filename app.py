@@ -28,7 +28,7 @@ def home():
     }
   ]
 
-  return render_template("home.html", title="The Pitcher", posts=posts)
+  return render_template("home.html", title="Home", posts=posts)
 
 
 if __name__ == "__main__":
