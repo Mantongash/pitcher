@@ -3,7 +3,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-posts = [
+
+@app.route("/")
+@app.route("/home")
+def home():
+  posts = [
     {
         "title": "The Genius",
         "author": "Michaelangelo",
@@ -22,12 +26,9 @@ posts = [
         "pitch": "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind",
         "date": "12th Aug, 1993"
     }
+  ]
 
-]
-@app.route("/")
-@app.route("/home")
-def home():
-    return render_template("home.html", title="The Pitcher", posts=posts)
+  return render_template("home.html", title="The Pitcher", posts=posts)
 
 
 if __name__ == "__main__":
