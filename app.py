@@ -39,13 +39,13 @@ def about():
 @app.route("/login")
 def login():
     form = LoginForm()
-    return render_template("login.html", title="Log In")
+    return render_template("login.html", title="Log In", form=form)
 
 
 @app.route("/signup")
 def signup():
     form = RegistrationForm()
-    return render_template("signup.html", title="Sign Up")
+    return render_template("signup.html", title="Sign Up", form=form)
 
 
 if __name__ == "__main__":
