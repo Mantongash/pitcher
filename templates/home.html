@@ -6,11 +6,14 @@
   <p>Create your one minute pitch and know it's worth</p>
 </header>
 <main>
+  
   {% for post in posts %}
+  <div class="posts card">
     <h1>{{post.title}}</h1>
     <p>{{post.date}}</p>
     <p>{{post.pitch}}</p>
     <p>{{post.author}}</p>
+  </div>
   {% endfor %}
 </main>
 {% endblock content%}
