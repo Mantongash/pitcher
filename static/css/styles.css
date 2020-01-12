@@ -34,3 +34,8 @@ nav a {
   font-weight: bolder;
 }
 
+form {
+  width: 30%;
+  margin: 0 auto;
+}
+
