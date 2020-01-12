@@ -42,7 +42,11 @@ def about():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash("You are successfully logged in !", "success")
+        if form.email.data == "admin@gmail.com" and form.password.data == "123":
+            flash("You are successfully logged in !", "success")
+        else:
+            flash("Please check your email and password", "danger")
+
         return redirect(url_for("home"))
     return render_template("login.html", title="Log In", form=form)
 
