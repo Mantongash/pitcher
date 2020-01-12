@@ -1,7 +1,7 @@
-{% extends "base.html" %} 
-{% block content%}
+{% extends "base.html" %} {% block content%}
 
 <form action="" method="POST">
+  {{form.hidden_tag()}}
   <h2>Sign Up</h2>
   <div class="form-group">
     {{form.username.label(class="form-control-label")}}

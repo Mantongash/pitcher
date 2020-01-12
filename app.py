@@ -38,13 +38,13 @@ def about():
     return render_template("about.html", title="About")
 
 
-@app.route("/login")
+@app.route("/login", methods=["POST", "GET"])
 def login():
     form = LoginForm()
     return render_template("login.html", title="Log In", form=form)
 
 
-@app.route("/signup")
+@app.route("/signup", methods=["POST", "GET"])
 def signup():
     form = RegistrationForm()
     return render_template("signup.html", title="Sign Up", form=form)
