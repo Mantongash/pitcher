@@ -30,6 +30,8 @@
     </nav>
         {% with messages = get_flashed_messages(with_categories = true)%}
           {% if messages %}
+            {% for message, category in messages%}
+            {% endfor %}
           {%endif%}
         {% endwith%}
         {% block content %} {% endblock content%}
