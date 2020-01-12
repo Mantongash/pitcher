@@ -41,6 +41,9 @@ def about():
 @app.route("/login", methods=["POST", "GET"])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        flash("You are successfully logged in !", "success")
+        return redirect(url_for("home"))
     return render_template("login.html", title="Log In", form=form)
 
 
