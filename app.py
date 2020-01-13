@@ -20,6 +20,16 @@ class User(db.Model):
     def __repl__(self):
         return f"User({self.username}, {self.email}, {self.img_file})"
 
+class Pitch(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
+
+
+    def __repl__(self):
+        return f"Pitch({self.title}, {self.date_posted}, {self.img_file})"
+
 
 @app.route("/")
 @app.route("/home")
