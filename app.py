@@ -10,6 +10,16 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///records.db"
 
 db = SQLAlchemy(app)
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), nullable=False, unique=True)
+    email = db.Column(db.String(20), nullable=False, unique=True)
+    img_file = db.Column(db.String(20), nullable=False)
+    password = db.Column(db.String(60), nullable=False, default="default.jpg")
+
+    def __repl__(self):
+        return f"User({self.username}, {self.email}, {self.img_file})"
+
 
 @app.route("/")
 @app.route("/home")
