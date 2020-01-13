@@ -1,4 +1,7 @@
-from models import User, Pitch
+from pitcher.models import User, Pitch
+from pitcher import app
+from flask import render_template, redirect, flash,url_for
+from pitcher.forms import RegistrationForm, LoginForm
 @app.route("/")
 @app.route("/home")
 def home():
