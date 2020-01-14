@@ -1,5 +1,5 @@
 from datetime import datetime
-from pitcher import db
+from pitcher import db, login_manager
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
