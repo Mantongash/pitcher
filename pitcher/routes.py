@@ -1,5 +1,5 @@
 from pitcher.models import User, Pitch
-from pitcher import app
+from pitcher import app, bcrypt, db
 from flask import render_template, redirect, flash,url_for
 from pitcher.forms import RegistrationForm, LoginForm
 @app.route("/")
