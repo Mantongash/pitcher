@@ -13,5 +13,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///records.db"
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
 
 from pitcher import routes
