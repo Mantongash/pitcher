@@ -1,18 +1,31 @@
-from datetime import datetime
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
-
-
+from flask_mail import Mail
 
 app = Flask(__name__)
-
-app.config["SECRET_KEY"] = "6b2d9404ac5ccfb7635f8bc5650b5119"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///records.db"
-
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///records.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
+login_manager.login_view = 'user.login'
+login_manager.login_message_category = 'info'
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
+mail = Mail(app)
 
-from pitcher import routes
+from pitcher.people.routes import people
+from pitcher.posts.routes import posts
+from pitcher.main.routes import main
+
+
+
+app.register_blueprint(people)
+app.register_blueprint(posts)
+app.register_blueprint(main)
